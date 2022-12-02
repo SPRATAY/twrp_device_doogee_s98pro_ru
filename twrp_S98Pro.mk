@@ -23,7 +23,7 @@ $(call inherit-product, $(SRC_TARGET_DIR)/product/aosp_base.mk)
 $(call inherit-product, $(SRC_TARGET_DIR)/product/gsi_keys.mk)
 
 # Inherit from our custom product configuration
-$(call inherit-product, vendor/twrp/config/common.mk)
+#$(call inherit-product, vendor/twrp/config/common.mk)
 
 # Device specific configs
 $(call inherit-product, device/doogee/S98Pro/device.mk)
@@ -34,3 +34,17 @@ PRODUCT_NAME := twrp_S98Pro
 PRODUCT_BRAND := DOOGEE
 PRODUCT_MODEL := S98Pro
 PRODUCT_MANUFACTURER := doogee
+
+# Dynamic
+PRODUCT_USE_DYNAMIC_PARTITIONS := true
+
+# fastbootd
+PRODUCT_PACKAGES += \
+    android.hardware.fastboot@1.0-impl-mock \
+    fastbootd
+
+# HACK: Set vendor patch level
+PRODUCT_PROPERTY_OVERRIDES += \
+    ro.vendor.build.security_patch=2099-12-31 \
+    ro.bootimage.build.date.utc=0 \
+    ro.build.date.utc=0
