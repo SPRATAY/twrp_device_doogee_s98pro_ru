@@ -5,4 +5,14 @@
 # SPDX-License-Identifier: Apache-2.0
 #
 
-LOCAL_PATH := device/doogee/S98Pro
+
+# A/B
+AB_OTA_UPDATER := true
+AB_OTA_PARTITIONS += \
+    system \
+    vendor \
+    product \
+    boot \
+    vbmeta_vendor \
+    vbmeta_system
+BOARD_USES_RECOVERY_AS_BOOT := true
