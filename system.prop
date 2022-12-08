@@ -13,3 +13,8 @@ ro.sys.usb.storage.type=mtp
 
 # Kmsetkey
 #ro.hardware.kmsetkey=beanpod
+
+# debug
+ro.adb.secure=0
+ro.debuggable=1
+ro.force.debuggable=1
