@@ -107,7 +107,8 @@ TW_INCLUDE_FBE_METADATA_DECRYPT := true
 
 #test
 #TW_OEM_BUILD := true
-BOARD_RAMDISK_USE_XZ := true
+#BOARD_RAMDISK_USE_XZ := true
+LZMA_RAMDISK_TARGETS := recovery
 
 # TWRP Configuration
 TW_THEME := portrait_hdpi
