@@ -117,7 +117,9 @@ PLATFORM_VERSION := 16.1.0
 #test
 #TW_OEM_BUILD := true
 #BOARD_RAMDISK_USE_XZ := true
-#LZMA_RAMDISK_TARGETS := recovery
+TW_EXCLUDE_NANO := true
+TW_EXCLUDE_BASH := true
+TW_EXCLUDE_TZDATA := true
 
 # TWRP Configuration
 TW_THEME := portrait_hdpi
