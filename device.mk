@@ -30,7 +30,8 @@ AB_OTA_POSTINSTALL_CONFIG += \
 PRODUCT_PACKAGES += \
     android.hardware.boot@1.1-impl.recovery \
     android.hardware.boot@1.1-impl \
-    bootctrl.mt6781.recovery
+    android.hardware.boot@1.1-service \
+    #bootctrl.mt6781.recovery
 
 # Fastbootd
 PRODUCT_PACKAGES += \
@@ -41,3 +42,7 @@ PRODUCT_PACKAGES += \
 PRODUCT_PACKAGES += \
     android.hardware.health@2.1-service \
     android.hardware.health@2.1-impl
+
+# MTK PlPath Utils
+PRODUCT_PACKAGES += \
+    mtk_plpath_utils.recovery
