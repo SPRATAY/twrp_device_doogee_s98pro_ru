@@ -2,11 +2,11 @@
 ro.sys.usb.storage.type=mtp
 
 # Crypto
-#ro.crypto.volume.filenames_mode=aes-256-cts
+ro.crypto.volume.filenames_mode=aes-256-cts
 
 # TEE
-#ro.vendor.mtk_tee_gp_support=1
-#ro.vendor.mtk_microtrust_tee_support=1
+ro.vendor.mtk_tee_gp_support=1
+ro.vendor.mtk_microtrust_tee_support=1
 
 # Gatekeeper
 #ro.hardware.gatekeeper=beanpod
@@ -18,3 +18,7 @@ ro.sys.usb.storage.type=mtp
 ro.adb.secure=0
 ro.debuggable=1
 ro.force.debuggable=1
+
+ro.vendor.mtk_f2fs_enable=1
+ro.vendor.mtk_emmc_support=1
+ro.vendor.mtk_ufs_support=1
