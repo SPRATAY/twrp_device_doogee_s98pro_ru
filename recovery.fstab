@@ -1,6 +1,6 @@
-system /system ext4 ro wait,slotselect,logical
+system /system ext4 ro wait,slotselect,logical,mounttodecrypt
 
-vendor /vendor ext4 ro wait,slotselect,logical
+vendor /vendor ext4 ro wait,slotselect,logical,mounttodecrypt
 
 product /product ext4 ro wait,slotselect,logical
 
