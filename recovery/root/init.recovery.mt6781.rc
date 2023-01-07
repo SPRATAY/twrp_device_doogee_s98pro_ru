@@ -1,4 +1,14 @@
-import /init.recovery.microtrust.rc
+import /microtrust.rc
+
+on init
+    export LD_LIBRARY_PATH /system/lib64:/vendor/lib64:/vendor/lib64/hw:/system/lib64/hw
+
+on fs
+    install_keyring
+
+    write /sys/class/power_supply/usb/otg_switch 1
+    write /sys/class/oplus_chg/usb/otg_switch 1
+
 on post-fs
     # Support A/B feature for EMMC and UFS boot region
     wait /dev/block/mmcblk0boot0 2
@@ -20,6 +30,7 @@ on post-fs
     symlink /dev/block/mapper/pl_b /dev/block/by-name/preloader_raw_b
     symlink /dev/block/mapper/pl_a /dev/block/platform/bootdevice/by-name/preloader_raw_a
     symlink /dev/block/mapper/pl_b /dev/block/platform/bootdevice/by-name/preloader_raw_b
+    start mtk.plpath.utils.link
 
 service mtk.plpath.utils.link /system/bin/mtk_plpath_utils
     class main
@@ -78,4 +89,5 @@ on property:twrp.decrypt.done=true
     stop gatekeeper-1-0
 
 on boot
-    start health-hal-2-1
+     start boot-hal-1-1
+     start health-hal-2-1
