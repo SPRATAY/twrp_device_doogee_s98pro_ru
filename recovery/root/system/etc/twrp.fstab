@@ -1,7 +1,7 @@
 # Logical partitions
 #/system_ext             ext4    /system_ext                                             flags=display="System Ext";
-/vendor                 ext4    /dev/block/dm-2                                                 flags=display="Vendor";
-/system                 ext4    /dev/block/dm-1                                                 flags=display="System";
+/vendor                 ext4    /dev/block/dm-2                                                 flags=display="Vendor";mounttodecrypt
+/system                 ext4    /dev/block/dm-1                                                 flags=display="System";mounttodecrypt
 /product                ext4    /dev/block/dm-0                                                flags=display="Product";
 
 # Core Partitions
