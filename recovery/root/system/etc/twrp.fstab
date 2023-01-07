@@ -5,14 +5,14 @@
 /product                ext4    /dev/block/dm-0                                                flags=display="Product";
 
 # Core Partitions
-/md_udc                 emmc    /dev/block/platform/bootdevice/by-name/md_udc           flags=backup=1
-/metadata               emmc    /dev/block/platform/bootdevice/by-name/metadata         flags=backup=1
+#/md_udc                 emmc    /dev/block/platform/bootdevice/by-name/md_udc           flags=backup=1
+#/metadata               emmc    /dev/block/platform/bootdevice/by-name/metadata         flags=backup=1
 
 # Common partition
-/data                   f2fs    /dev/block/platform/bootdevice/by-name/userdata         flags=fileencryption=aes-256-xts
-/boot                   emmc    /dev/block/platform/bootdevice/by-name/boot             flags=display="Boot";backup=1;flashimg=1
+#/data                   f2fs    /dev/block/platform/bootdevice/by-name/userdata         flags=fileencryption=aes-256-xts
+/boot                   emmc    /dev/block/platform/bootdevice/by-name/boot             flags=display="Boot";backup=1;flashimg=1;slotselect;
 /dtbo                   emmc    /dev/block/platform/bootdevice/by-name/dtbo             flags=backup=1;display="Dtbo";flashimg=1
-/cache                  ext4    /dev/block/platform/bootdevice/by-name/cache            flags=backup=1;wipeingui;wipeduringfactoryreset
+#/cache                  ext4    /dev/block/platform/bootdevice/by-name/cache            flags=backup=1;wipeingui;wipeduringfactoryreset
 /recovery               emmc    /dev/block/platform/bootdevice/by-name/recovery         flags=display="Recovery";backup=1;flashimg=1
 /persist                ext4    /dev/block/platform/bootdevice/by-name/persist          flags=backup=0;display="Persist"
 /persist_image          emmc    /dev/block/platform/bootdevice/by-name/persist          flags=backup=1;display="Persist Image";flashimg=1
@@ -66,6 +66,6 @@
 
 # External-Devices (SDCARD | OTG)
 /external_sd            auto    /dev/block/mmcblk0p1    /dev/block/mmcblk0              flags=display="External SDcard";storage;wipeingui;removable;backup=0
-/usbotg                 auto    /dev/block/sdd1         /dev/block/sdd                  flags=display="Usb-Otg";storage;removable;wipeingui;backup=0
+/usbotg                 auto    /dev/block/sdd1         /dev/block/sdd                  flags=display="Usb-Otg";storage;removable;wipeingui;backup=0;fsflags="utf8";
 
 # otp, pi_img, md1dsp
