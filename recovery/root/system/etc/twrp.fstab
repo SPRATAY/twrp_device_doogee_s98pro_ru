@@ -8,9 +8,9 @@
 #vendor /vendor ext4 ro wait,slotselect,logical,mounttodecrypt
 
 #product /product ext4 ro wait,slotselect,logical
-/vendor                 ext4    vendor                                                flags=display="Vendor";slotselect;logical
+/vendor                 ext4    vendor                                                flags=display="Vendor";slotselect
 /system                 ext4    /system                                                flags=display="System";wait;slotselect;logical
-/product                 ext4    /product                                                flags=display="Vendor";wait;slotselect;logical
+/product                 ext4    /product                                                flags=display="Product";wait;slotselect;logical
 
 # Core Partitions
 /md_udc                 emmc    /dev/block/platform/bootdevice/by-name/md_udc           flags=backup=1
