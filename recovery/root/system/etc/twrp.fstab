@@ -10,11 +10,12 @@
 #product /product ext4 ro wait,slotselect,logical
 /vendor                 ext4    vendor                                                flags=display="Vendor";slotselect;logical
 /system                 ext4    /system                                                flags=display="System";wait;slotselect;logical
-/vendor                 ext4    /product                                                flags=display="Vendor";wait;slotselect;logical
+/product                 ext4    /product                                                flags=display="Vendor";wait;slotselect;logical
 
 # Core Partitions
 /md_udc                 emmc    /dev/block/platform/bootdevice/by-name/md_udc           flags=backup=1
-/metadata               emmc    /dev/block/platform/bootdevice/by-name/metadata         flags=backup=1
+#/metadata               emmc    /dev/block/platform/bootdevice/by-name/metadata         flags=backup=1
+/dev/block/platform/bootdevice/by-name/metadata /metadata ext4 noatime,nosuid,nodev,discard,wait,check,formattable
 
 # Common partition
 #/data                   f2fs    /dev/block/platform/bootdevice/by-name/userdata         fileencryption=aes-256-xts:aes-256-cts:v2+inlinecrypt_optimized,keydirectory=/metadata/vold/metadata_encryption,metadata_encryption=aes-256-xts
