@@ -1,8 +1,14 @@
 # Logical partitions
 #/system_ext             ext4    /system_ext                                             flags=display="System Ext";
-/vendor                 ext4    /dev/block/dm-2                                                 flags=display="Vendor";mounttodecrypt;
-/system                 ext4    /dev/block/dm-1                                                 flags=display="System";mounttodecrypt;
-/product                ext4    /dev/block/dm-0                                                flags=display="Product";
+#/vendor                 ext4    /dev/block/dm-2                                                 flags=display="Vendor";mounttodecrypt;
+#/system                 ext4    /dev/block/dm-1                                                 flags=display="System";mounttodecrypt;
+#/product                ext4    /dev/block/dm-0                                                flags=display="Product";
+#system /system ext4 ro wait,slotselect,logical,mounttodecrypt
+
+#vendor /vendor ext4 ro wait,slotselect,logical,mounttodecrypt
+
+#product /product ext4 ro wait,slotselect,logical
+/vendor                 ext4    /vendor                                                flags=display="Vendor";wait;slotselect;logical
 
 # Core Partitions
 /md_udc                 emmc    /dev/block/platform/bootdevice/by-name/md_udc           flags=backup=1
@@ -32,9 +38,9 @@
 /proinfo                emmc    /dev/block/platform/bootdevice/by-name/proinfo          flags=display="Proinfo";backup=1
 /apd                    emmc    /dev/block/platform/bootdevice/by-name/apd
 
-# Non-Volatile (RAM | DATA | CFG)
-/nvcfg                  ext4    /dev/block/platform/bootdevice/by-name/nvcfg            flags=display="NvCfg";backup=1
-/nvdata                 ext4    /dev/block/platform/bootdevice/by-name/nvdata           flags=display="NvData";backup=1
+# Non-Volatile (RAM | DATA | CFG);
+/nvcfg                  ext4    /dev/block/platform/bootdevice/by-name/nvcfg            flags=display="NvCfg";backup=1;subpartitionof=/nvram;
+/nvdata                 ext4    /dev/block/platform/bootdevice/by-name/nvdata           flags=display="NvData";backup=1;subpartitionof=/nvram;
 /nvram                  emmc    /dev/block/platform/bootdevice/by-name/nvram            flags=display="NvRam";backup=1;flashimg=1
 
 # Subscriber Identification Module (SIM)
