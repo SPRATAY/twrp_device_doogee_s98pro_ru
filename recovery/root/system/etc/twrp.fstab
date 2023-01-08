@@ -20,7 +20,7 @@
 # Common partition
 #/data                   f2fs    /dev/block/platform/bootdevice/by-name/userdata         fileencryption=aes-256-xts:aes-256-cts:v2+inlinecrypt_optimized,keydirectory=/metadata/vold/metadata_encryption,metadata_encryption=aes-256-xts
 
-/data                   f2fs    /dev/block/platform/bootdevice/by-name/userdata         noatime,nosuid,nodev,discard,noflush_merge,fsync_mode=nobarrier,reserve_root=134217,resgid=1065,inlinecrypt wait,check,formattable,quota,latemount,resize,reservedsize=128m,checkpoint=fs,fileencryption=aes-256-xts:aes-256-cts:v2+inlinecrypt_optimized,keydirectory=/metadata/vold/metadata_encryption,fsverity
+/dev/block/platform/bootdevice/by-name/userdata /data f2fs noatime,nosuid,nodev,discard,noflush_merge,fsync_mode=nobarrier,reserve_root=134217,resgid=1065,inlinecrypt wait,check,formattable,quota,latemount,resize,reservedsize=128m,checkpoint=fs,fileencryption=aes-256-xts:aes-256-cts:v2+inlinecrypt_optimized,keydirectory=/metadata/vold/metadata_encryption,fsverity
 
 /boot                   emmc    /dev/block/platform/bootdevice/by-name/boot             flags=display="Boot";backup=1;flashimg=1;slotselect;
 /dtbo                   emmc    /dev/block/platform/bootdevice/by-name/dtbo             flags=backup=1;display="Dtbo";flashimg=1;slotselect;
