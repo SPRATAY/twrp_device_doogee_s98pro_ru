@@ -14,7 +14,7 @@ ro.crypto.volume.options=::v2
 # TEE
 ro.vendor.mtk_tee_gp_support=1
 ro.vendor.mtk_microtrust_tee_support=1
-ro.vendor.mtk_trustonic_tee_support=1
+#ro.vendor.mtk_trustonic_tee_support=1
 
 # Gatekeeper
 #ro.hardware.gatekeeper=beanpod
