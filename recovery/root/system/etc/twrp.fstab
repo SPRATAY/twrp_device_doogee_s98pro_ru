@@ -2,7 +2,7 @@
 /vendor                 ext4    /vendor                                                 flags=display="Vendor";logical
 /system                 ext4    /system                                                 flags=display="System";logical
 #/product                ext4    /product                                                flags=display="Product";logical
-/vendor             ext4      /dev/block/bootdevice/by-name/vendor                     flags=display="Vendor";logical;slotselect
+/product             ext4      /dev/block/bootdevice/by-name/product                     flags=display="Product";logical;slotselect
 
 # Core Partitions
 /md_udc                 emmc    /dev/block/platform/bootdevice/by-name/md_udc           flags=backup=1
