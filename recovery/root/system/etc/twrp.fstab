@@ -1,30 +1,14 @@
 # Logical partitions
-#/system_ext             ext4    /system_ext                                             flags=display="System Ext";
-#/vendor                 ext4    /dev/block/dm-2                                                 flags=display="Vendor";mounttodecrypt;
-#/system                 ext4    /dev/block/dm-1                                                 flags=display="System";mounttodecrypt;
-#/product                ext4    /dev/block/dm-0                                                flags=display="Product";
-#system /system ext4 ro wait,slotselect,logical,mounttodecrypt
-
-#vendor /vendor ext4 ro wait,slotselect,logical,mounttodecrypt
-
-#product /product ext4 ro wait,slotselect,logical
-/vendor                 ext4    /dev/block/platform/bootdevice/by-name/vendor                                                flags=display="Vendor"
-/system                 ext4    /system                                                flags=display="System";logical
-/product                 ext4    /product                                                flags=display="Product";logical
+/vendor                 ext4    /vendor                                                 flags=display="Vendor";logical
+/system                 ext4    /system                                                 flags=display="System";logical
+/product                ext4    /product                                                flags=display="Product";logical
 
 # Core Partitions
-/md_udc                 emmc    /dev/block/platform/bootdevice/by-name/md_udc           flags=backup=1
-#/metadata               emmc    /dev/block/platform/bootdevice/by-name/metadata         flags=backup=1
-/dev/block/platform/bootdevice/by-name/metadata /metadata ext4 noatime,nosuid,nodev,discard wait,check,formattable
-
-
-/cache			ext4		/dev/block/platform/bootdevice/by-name/rescue		flags=display="Cache"
-/storage		f2fs		/data/media/0						flags=display="Internal Storage";backup=1;usermrf;fsflags="bind";removable
+/md_udc                 ext4    /dev/block/platform/bootdevice/by-name/md_udc           flags=backup=1
+/metadata               ext4    /dev/block/platform/bootdevice/by-name/metadata         flags=backup=1
 
 # Common partition
-#/data                   f2fs    /dev/block/platform/bootdevice/by-name/userdata         fileencryption=aes-256-xts:aes-256-cts:v2+inlinecrypt_optimized,keydirectory=/metadata/vold/metadata_encryption,metadata_encryption=aes-256-xts
-
-/dev/block/platform/bootdevice/by-name/userdata /data f2fs noatime,nosuid,nodev,discard,noflush_merge,fsync_mode=nobarrier,reserve_root=134217,resgid=1065,inlinecrypt wait,check,formattable,quota,latemount,resize,reservedsize=128m,checkpoint=fs,fileencryption=aes-256-xts:aes-256-cts:v2+inlinecrypt_optimized,keydirectory=/metadata/vold/metadata_encryption,fsverity
+/data                   f2fs    /dev/block/platform/bootdevice/by-name/userdata         fileencryption=aes-256-xts:aes-256-cts:v2+inlinecrypt_optimized,keydirectory=/metadata/vold/metadata_encryption,metadata_encryption=aes-256-xts
 
 /boot                   emmc    /dev/block/platform/bootdevice/by-name/boot             flags=display="Boot";backup=1;flashimg=1;slotselect;
 /dtbo                   emmc    /dev/block/platform/bootdevice/by-name/dtbo             flags=backup=1;display="Dtbo";flashimg=1;slotselect;
