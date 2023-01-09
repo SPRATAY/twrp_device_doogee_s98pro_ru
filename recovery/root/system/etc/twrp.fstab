@@ -4,7 +4,7 @@
 /product                ext4    /product                                                flags=display="Product";logical
 
 # Core Partitions
-/md_udc                 ext4    /dev/block/platform/bootdevice/by-name/md_udc           flags=backup=1
+/md_udc                 emmc    /dev/block/platform/bootdevice/by-name/md_udc           flags=backup=1
 /metadata               ext4    /dev/block/platform/bootdevice/by-name/metadata         flags=backup=1
 
 # Common partition
