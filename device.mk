@@ -35,12 +35,21 @@ PRODUCT_TARGET_VNDK_VERSION := 31
 # API
 PRODUCT_SHIPPING_API_LEVEL := 30
 
+PRODUCT_PROPERTY_OVERRIDES += \
+    ro.vendor.build.security_patch=2099-12-31
+
+# Health Hal
+PRODUCT_PACKAGES += \
+    android.hardware.health@2.1-impl \
+    android.hardware.health@2.1-service
+
 # Boot Control HAL
 PRODUCT_PACKAGES += \
-    android.hardware.boot@1.1-impl.recovery \
-    android.hardware.boot@1.1-impl \
-    android.hardware.boot@1.1-service \
-    #bootctrl.mt6781.recovery
+    android.hardware.boot@1.2-mtkimpl.recovery
+#    android.hardware.boot@1.1-impl.recovery \
+#    android.hardware.boot@1.1-impl \
+#    android.hardware.boot@1.1-service \
+#    bootctrl.mt6781.recovery
 
 PRODUCT_PACKAGES_DEBUG += \
     bootctrl
@@ -64,5 +73,5 @@ PRODUCT_PACKAGES += \
     update_verifier \
     update_engine_sideload
 
-TW_OVERRIDE_SYSTEM_PROPS := \
+#TW_OVERRIDE_SYSTEM_PROPS := \
     "ro.build.product;ro.build.fingerprint;ro.build.version.incremental;ro.product.device=ro.product.system.device;ro.product.model=ro.product.system.model;ro.product.name=ro.product.system.name"
