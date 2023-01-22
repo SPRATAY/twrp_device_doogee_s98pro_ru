@@ -1,11 +1,10 @@
 # Logical partitions
-/vendor                 ext4    /vendor                                                 flags=display="Vendor";logical
-/system                 ext4    /system                                                 flags=display="System";logical
-#/product                ext4    /product                                                flags=display="Product";logical
+/system_root        ext4      /dev/block/bootdevice/by-name/system                     flags=display="System";logical;slotselect
+/product            ext4      /dev/block/bootdevice/by-name/product                    flags=display="Product";logical;slotselect
 /vendor             ext4      /dev/block/bootdevice/by-name/vendor                     flags=display="Vendor";logical;slotselect
 
 # Core Partitions
-/md_udc                 emmc    /dev/block/platform/bootdevice/by-name/md_udc           flags=backup=1
+/md_udc                 ext4    /dev/block/platform/bootdevice/by-name/md_udc           flags=backup=1
 /metadata               ext4    /dev/block/platform/bootdevice/by-name/metadata         flags=backup=1
 
 # Common partition
@@ -13,7 +12,8 @@
 
 /boot                   emmc    /dev/block/platform/bootdevice/by-name/boot             flags=display="Boot";backup=1;flashimg=1;slotselect;
 /dtbo                   emmc    /dev/block/platform/bootdevice/by-name/dtbo             flags=backup=1;display="Dtbo";flashimg=1;slotselect;
-#/cache                  ext4    /dev/block/platform/bootdevice/by-name/cache            flags=backup=1;wipeingui;wipeduringfactoryreset
+/cache                  ext4    /dev/block/platform/bootdevice/by-name/cache            flags=backup=1;wipeingui;wipeduringfactoryreset
+/rescue                 ext4    /dev/block/platform/bootdevice/by-name/rescue           flags=display="rescue"
 /recovery               emmc    /dev/block/platform/bootdevice/by-name/recovery         flags=display="Recovery";backup=1;flashimg=1
 /persist                ext4    /dev/block/platform/bootdevice/by-name/persist          flags=backup=0;display="Persist"
 /persist_image          emmc    /dev/block/platform/bootdevice/by-name/persist          flags=backup=1;display="Persist Image";flashimg=1
@@ -72,4 +72,7 @@
 /external_sd            auto    /dev/block/mmcblk0p1    /dev/block/mmcblk0              flags=display="External SDcard";storage;wipeingui;removable;backup=0
 /usbotg                 auto    /dev/block/sdd1         /dev/block/sdd                  flags=display="Usb-Otg";storage;removable;wipeingui;backup=0;fsflags="utf8";
 
-# otp, pi_img, md1dsp
+/otp                    emmc    /dev/block/platform/bootdevice/by-name/otp              flags=display="Otp"
+/pi_img                 emmc    /dev/block/platform/bootdevice/by-name/pi_img           flags=display="Pi_img_a";slotselect
+
+# md1dsp
