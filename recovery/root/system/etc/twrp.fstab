@@ -73,6 +73,6 @@
 /usbotg                 auto    /dev/block/sdd1         /dev/block/sdd                  flags=display="Usb-Otg";storage;removable;wipeingui;backup=0;fsflags="utf8";
 
 /otp                    emmc    /dev/block/platform/bootdevice/by-name/otp              flags=display="Otp"
-/pi_img                 emmc    /dev/block/platform/bootdevice/by-name/pi_img           flags=display="Pi_img_a";slotselect
+/pi_img                 emmc    /dev/block/platform/bootdevice/by-name/pi_img           flags=display="Pi_img";slotselect
 
 # md1dsp
