@@ -52,7 +52,7 @@
 /tee2                   emmc    /dev/block/platform/bootdevice/by-name/tee2             flags=backup=1;subpartitionof=/tee1
 
 # Factory Reset Protection (FRP)
-/persistent             emmc    /dev/block/platform/bootdevice/by-name/frp              flags=display="Frp";backup=1
+/frp             emmc    /dev/block/platform/bootdevice/by-name/frp              flags=display="Frp";backup=1
 
 # Firmware
 /gz1                    emmc    /dev/block/platform/bootdevice/by-name/gz1              flags=display="Gz";backup=1;slotselect;
@@ -79,5 +79,6 @@
 
 /otp                    emmc    /dev/block/platform/bootdevice/by-name/otp              flags=display="Otp"
 /pi_img                 emmc    /dev/block/platform/bootdevice/by-name/pi_img           flags=display="Pi_img";slotselect
+/flashinfo          emmc      /dev/block/platform/bootdevice/by-name/flashinfo         flags=display="Flashinfo"
 
 # md1dsp
