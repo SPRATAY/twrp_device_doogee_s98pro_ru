@@ -80,5 +80,10 @@
 /otp                    emmc    /dev/block/platform/bootdevice/by-name/otp              flags=display="Otp"
 /pi_img                 emmc    /dev/block/platform/bootdevice/by-name/pi_img           flags=display="Pi_img";slotselect
 /flashinfo          emmc      /dev/block/platform/bootdevice/by-name/flashinfo         flags=display="Flashinfo"
+/preloader    emmc      /dev/block/platform/bootdevice/by-name/preloader   flags=display="Preloader";slotselect;
+/preloader_emmc    emmc      /dev/block/platform/bootdevice/by-name/preloader_emmc   flags=display="Preloader emmc";slotselect;
+/preloader_raw    emmc      /dev/block/platform/bootdevice/by-name/preloader_raw   flags=display="Preloader raw";slotselect;
+/preloader_ufs    emmc      /dev/block/platform/bootdevice/by-name/preloader_ufs   flags=display="Preloader ufs";slotselect;
+
 
 # md1dsp
