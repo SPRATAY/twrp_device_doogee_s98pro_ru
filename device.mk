@@ -9,12 +9,25 @@
 # A/B
 AB_OTA_UPDATER := true
 AB_OTA_PARTITIONS += \
-    system \
-    vendor \
-    product \
     boot \
+    dtbo \
+    gz \
+    lk \
+    md1img \
+    pi_img \
+    preloader_raw \
+    scp \
+    spmfw \
+    sspm \
+    tee \
+    vbmeta \
+    vbmeta_system \
     vbmeta_vendor \
-    vbmeta_system
+    vendor_boot \
+    pl \
+    product \
+    system \
+    vendor
 
 AB_OTA_POSTINSTALL_CONFIG += \
     RUN_POSTINSTALL_system=true \
