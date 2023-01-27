@@ -145,6 +145,7 @@ TW_INCLUDE_LIBRESETPROP :=true
 TW_INCLUDE_REPACKTOOLS := true
 
 #BOARD_RAMDISK_USE_LZ4 := true
+TW_OEM_BUILD := true
 
 # TWRP Configuration
 TW_THEME := portrait_hdpi
